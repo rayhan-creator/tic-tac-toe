@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --accent-x: #38bdf8;
+  --accent-o: #f472b6;
+  --text-color: #f8fafc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255. 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.square:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.square-x { color: var(--accent-x); text-shadow: 0 0 10px var(--accent-x); }
+.square-o { color: var(--accent-o); text-shadow: 0 0 10px var(--accent-o); }
+
+.game-info {
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.game-info ol {
+  padding: 0;
+  list-style: none;
+}
+
+.game-info li button {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #94a3b8;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.game-info li button:hover {
+  background: var(--accent-x);
+  color: white;
+}
+
+.winner-square {
+  background: rgba(56, 189, 248, 0.2) !important;
+  border-color: var(--accent-x);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
