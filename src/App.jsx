@@ -27,7 +27,7 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = 'Winner: ' + winner;
   } else if (squares.every(sq => sq !== null)) {
-    status = "Draw!";
+    status = "Seri!";
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
